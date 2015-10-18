@@ -111,8 +111,8 @@ h4 {
 
 <section id="subnav">
   <div class="content">
-    <a href="#overview">Overview</a>
-    <a href="#grid">Grid</a>
+    <a class="smoothscroll" href="#overview">Overview</a>
+    <a class="smoothscroll" href="#grid">Grid</a>
   </div>
 </section>
 
@@ -321,5 +321,15 @@ h4 {
 </section>
 
 </div>
+
+<script src="/static/thirdparty/smooth_scroll/js/smooth-scroll.min.js"></script>
+<script>
+(function() {
+  smoothScroll.init({
+    'selector': '.smoothscroll',
+    'updateURL': false
+  });
+})();
+</script>
 </body>
 </html>
