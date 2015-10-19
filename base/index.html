@@ -12,7 +12,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   font-weight: 300;
-  line-height: 20px;
+  line-height: 22px;
 }
 h1,
 h2,
@@ -104,14 +104,13 @@ code {
   background-color: #f5f5f5;
   border: 1px solid #dedede;
   font-family: monospace;
-  margin: 0 4px;
   padding: 2px 4px;
+  white-space: nowrap;
 }
 
 pre code {
   border-radius: 3px;
   display: block;
-  margin: 0;
   padding: 10px;
   white-space: pre-wrap;
 }
@@ -140,7 +139,7 @@ table tr {
 <section id="overview">
   <div class="content pad-vert-medium">
     <h1>Base</h1>
-    <p>
+    <p></p>
       Base is a modern framework designed to reduce the amount of time writing
       CSS and JS, allowing more time for developers to produce great content.
     </p>
@@ -167,7 +166,7 @@ table tr {
       different.
     </p>
 
-    <div class="pad-vert-medium">
+    <div class="pad-top-small pad-bottom-medium">
       <div class="grid-2 grid-4-at-medium">
         <div class="text-center">
           <div class="icon placeholder space-bottom-base">
@@ -211,8 +210,8 @@ table tr {
       <h3>12 layout classes</h3>
       <p>
         The grid system is based on a 12-column, fluid-width layout. Widths of
-        each column can be defined using fractional names (e.g. one-half,
-        two-thirds, etc.).
+        each column can be defined using fractional names (e.g.
+        <code>one-half</code>, <code>two-thirds</code>, etc.).
       </p>
 
       <div class="grid pad-vert-base">
@@ -280,8 +279,8 @@ table tr {
     <div class="demo">
       <h3>Equal-width columns</h3>
       <p>
-        You can define the number of columns using the grid-N CSS classes, where
-        N is the number of columns.
+        You can define the number of columns using the <code>.grid-N</code> CSS
+        classes, where <code>N</code> is the number of columns.
       </p>
       <div class="grid-2 pad-vert-base">
         <div class="item"><div class="demo-box"></div></div>
@@ -304,8 +303,10 @@ table tr {
       <h3>Responsive suffixes</h3>
       <p>
         Change the number of columns at different screen widths using responsive
-        suffixes, i.e. adding -at-SCREENSIZE, where SCREENSIZE is one of:
-        extra-small, small, medium, large, and extra-large.
+        suffixes, i.e. adding <code>-at-SCREENSIZE</code>, where
+        <code>SCREENSIZE</code> is one of: <code>extra-small</code>,
+        <code>small</code>, <code>medium</code>, <code>large</code>, or
+        <code>extra-large</code>.
       </p>
       <div class="grid-1 grid-2-at-small grid-4-at-medium">
         <div class="item"><div class="demo-box"></div></div>
