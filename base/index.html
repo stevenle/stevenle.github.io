@@ -5,7 +5,7 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="/static/images/favicon.ico">
 <link rel="stylesheet" media="screen" href="/static/css/base.css">
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css">
 <style>
 body {
   color: #333;
@@ -31,9 +31,11 @@ h4 {
 #subnav a,
 #subnav a:visited {
   color: #2996cc;
+  font-size: 13px;
   font-weight: 400;
   margin-right: 20px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 #subnav a:hover {
@@ -84,6 +86,7 @@ h4 {
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
+  display: inline-block;
   font-weight: 400;
   padding: 10px 40px;
   text-decoration: none;
@@ -91,6 +94,44 @@ h4 {
 }
 .button:hover {
   background-color: #2586b7;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dedede;
+}
+
+code {
+  background-color: #f5f5f5;
+  border: 1px solid #dedede;
+  font-family: monospace;
+  margin: 0 4px;
+  padding: 2px 4px;
+}
+
+pre code {
+  border-radius: 3px;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  white-space: pre-wrap;
+}
+
+table {
+  font-weight: 300;
+  width: 100%;
+}
+table thead th {
+  font-weight: 400;
+}
+table tbody td {
+  font-weight: 300;
+}
+table td,
+table th {
+  padding: 10px 0;
+}
+table tr {
+  border-bottom: 1px solid #dedede;
 }
 </style>
 <body>
@@ -100,7 +141,8 @@ h4 {
   <div class="content pad-vert-medium">
     <h1>Base</h1>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Base is a modern framework designed to reduce the amount of time writing
+      CSS and JS, allowing more time for developers to produce great content.
     </p>
 
     <div class="cta">
@@ -113,17 +155,19 @@ h4 {
   <div class="content">
     <a class="smoothscroll" href="#overview">Overview</a>
     <a class="smoothscroll" href="#grid">Grid</a>
+    <a class="smoothscroll" href="#breakpoints">Breakpoints</a>
   </div>
 </section>
 
 <section id="grid">
-  <div class="content">
-    <div class="pad-bottom-medium">
-      <h2>Grid</h2>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+  <div class="content pad-vert-medium border-bottom">
+    <h2>Grid</h2>
+    <p>
+      At the heart of every great framework is a grid system. Base is no
+      different.
+    </p>
 
+    <div class="pad-vert-medium">
       <div class="grid-2 grid-4-at-medium">
         <div class="text-center">
           <div class="icon placeholder space-bottom-base">
@@ -316,6 +360,118 @@ h4 {
         <div class="one-fourth"><div class="demo-box"></div></div>
       </div>
     </div>
+
+  </div>
+</section>
+
+<section id="breakpoints">
+  <div class="content pad-vert-medium border-bottom">
+    <h2>Breakpoints</h2>
+    <p>
+      Base's <code>.content</code> container uses a fixed width at different
+      breakpoints so that the content size is predictable.
+    </p>
+
+    <h3>Widths</h3>
+
+    <div class="pad-bottom-medium">
+      <table>
+        <thead>
+          <tr>
+            <th>Size</th>
+            <th>Viewport width</th>
+            <th>Content width</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>extra-small</td>
+            <td>&gt;= 374px</td>
+            <td>324px</td>
+          </tr>
+          <tr>
+            <td>small</td>
+            <td>&gt;= 480px</td>
+            <td>424px</td>
+          </tr>
+          <tr>
+            <td>medium</td>
+            <td>&gt;= 718px</td>
+            <td>680px</td>
+          </tr>
+          <tr>
+            <td>large</td>
+            <td>&gt;= 1024px</td>
+            <td>868px</td>
+          </tr>
+          <tr>
+            <td>extra-large</td>
+            <td>&gt;= 1292px</td>
+            <td>1016px</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>SASS / SCSS helpers</h3>
+    <p>
+      Base comes with a few mixins to help generate mobile-first, responsive
+      rules at different breakpoints.
+    </p>
+
+<div class="grid-2-at-medium pad-bottom-small">
+<div class="item">
+<h4>@mixin breakpoint($selector)</h4>
+<pre class="space-bottom-base"><code>.foo {
+  color: red;
+
+  @include breakpoint($breakpoint-small) {
+    color: blue;
+  }
+}
+</code></pre>
+</div>
+<div class="item">
+<h4>Compiles to:</h4>
+<pre><code>.foo {
+  color: red;
+}
+@media (min-width(480px)) {
+  .foo {
+    color: blue;
+  }
+}
+</code></pre>
+</div>
+</div>
+
+<div class="grid-2-at-medium">
+<div class="item">
+<h4>@mixin breakpoint-rule($selector)</h4>
+<pre class="space-bottom-base"><code>@include breakpoint-rule(".foo") {
+  color: red;
+}
+</code></pre>
+</div>
+<div class="item">
+<h4>Compiles to:</h4>
+<pre><code>.foo {
+  color: red;
+}
+@media (min-width(374px)) {
+  .foo-at-extra-small {
+    color: red;
+  }
+}
+@media (min-width(480px)) {
+  .foo-at-small {
+    color: red;
+  }
+}
+/* etc. */
+</code></pre>
+</div>
+</div>
 
   </div>
 </section>
