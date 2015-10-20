@@ -2,7 +2,7 @@
 <html lang="en">
 <meta charset="utf8">
 <title>Base</title>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
 <link rel="shortcut icon" href="/static/images/favicon.ico">
 <link rel="stylesheet" media="screen" href="/static/css/base.css">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet" type="text/css">
@@ -19,6 +19,24 @@ h2,
 h3,
 h4 {
   font-weight: 400;
+}
+
+#overview {
+  background-color: #5fb7e4;
+  background-image: radial-gradient(circle, #5fb7e4, #4ca4d2);
+  color: #fff;
+}
+#overview h1 {
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+}
+#overview h2 {
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 40px;
+  max-width: 400px;
 }
 
 #subnav {
@@ -89,9 +107,11 @@ h4 {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-size: 13px;
   font-weight: 400;
   padding: 10px 40px;
   text-decoration: none;
+  text-transform: uppercase;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
 }
 .button:hover {
@@ -141,13 +161,9 @@ table tr {
 <div class="main">
 
 <section id="overview">
-  <div class="content pad-vert-medium">
+  <div class="content pad-vert-large">
     <h1>Base</h1>
-    <p></p>
-      Base is a modern framework designed to reduce the amount of time writing
-      CSS and JS, allowing more time for developers to produce great content.
-    </p>
-
+    <h2>A modern framework for a modern web.</h2>
     <div class="cta">
       <a class="button" href="https://github.com/stevenle/base">View on GitHub</a>
     </div>
